@@ -2,6 +2,7 @@ import * as THREE from "three";
 import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertexParticles.glsl";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { sRGBEncoding } from "three";
 
 export default class Sketch {
   constructor(options) {
@@ -18,7 +19,7 @@ export default class Sketch {
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.width, this.height);
     this.renderer.setClearColor(0xeeeeee, 1); 
-    this.renderer.outputEncoding = THREE.sRGBEncoding;
+
 
     this.container.appendChild(this.renderer.domElement);
 
@@ -153,7 +154,7 @@ export default class Sketch {
       new THREE.PlaneGeometry(7, 7),
       new THREE.MeshBasicMaterial({
         transparent: true,
-        color: 0x0000ff,
+        color: "#161c34",
         opacity: 0.01
       })
     )
